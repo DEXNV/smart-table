@@ -68,7 +68,7 @@ const applyFiltering = initFiltering(sampleTable.filter.elements, {    // пер
     searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
 }); 
 
-const applySearching = initSearching(sampleTable.search.elements, 'search');
+const applySearching = initSearching('search');
 
 // @todo: инициализация
 const applyPagination = initPagination(
