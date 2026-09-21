@@ -5,7 +5,12 @@ const compare = createComparison(defaultRules);
 export function initFiltering(elements, indexes) {
     Object.keys(indexes)
     .forEach((elementName) => {
-        elements[elementName].replaceChildren();  // ← очищаем select перед заполнением
+        elements[elementName].replaceChildren();
+
+        const emptyOption = document.createElement('option');
+        emptyOption.value = '';
+        emptyOption.textContent = 'All';
+        elements[elementName].append(emptyOption);
 
         elements[elementName].append(
             ...Object.values(indexes[elementName])

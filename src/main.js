@@ -22,6 +22,10 @@ const {data, ...indexes} = initData(sourceData);
 function collectState() {
     const state = processFormData(new FormData(sampleTable.container));
 
+    if (state.totalFrom || state.totalTo) {
+        state.total = [state.totalFrom, state.totalTo];
+    }
+
     const rowsPerPage = parseInt(state.rowsPerPage);    // приведём количество страниц к числу
     const page = parseInt(state.page ?? 1);                // номер страницы по умолчанию 1 и тоже число
 
