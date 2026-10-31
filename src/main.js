@@ -110,7 +110,6 @@ async function init() {
   updateIndexes(sampleTable.filter.elements, {
     searchBySeller: indexes.sellers,
   });
-  render()
 }
 
-init();
+init().then(render);
